@@ -182,7 +182,7 @@ public class SourceAndLibs implements Closeable {
         }
         List<String> command = new ArrayList<>();
         command.add(process);
-        command.addAll(Arrays.asList("--settings", (System.getenv("MAVEN_SETTINGS") != null) ? System.getenv("MAVEN_SETTINGS") : new File("maven-settings.xml").getAbsolutePath()));
+        command.addAll(Arrays.asList("--settings", (System.getenv("MAVEN_SETTINGS") != null) ? System.getenv("MAVEN_SETTINGS") : new File(".m2/settings.xml").getAbsolutePath()));
         command.addAll(Arrays.asList("--update-snapshots",
                 "--batch-mode",
                 "org.apache.maven.plugins:maven-dependency-plugin:3.8.0:copy-dependencies",
